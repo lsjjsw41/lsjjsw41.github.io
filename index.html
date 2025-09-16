@@ -81,7 +81,7 @@
                 <div class="relative">
                     <img src="https://picsum.photos/id/1060/800/300" alt="生日蛋糕和礼物" class="w-full h-56 sm:h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold px-6 pb-4 text-shadow-lg">生日快乐！</h1>
+                        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold px-6 pb-4 text-shadow-lg"> 祖国食人花老师 生日快乐！</h1>
                     </div>
                 </div>
                 
@@ -89,11 +89,11 @@
                 <div class="p-6 sm:p-8">
                     <div class="text-center mb-8">
                         <p id="greetingText" class="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                            愿你的这一岁充满欢笑、爱与惊喜，所有的美好愿望都能实现！
+                            愿你的这一年充满欢笑、爱与惊喜，所有的美好愿望都能实现！
                         </p>
                     </div>
                     
-                    <!-- 蜡烛（已移除年龄显示） -->
+                    <!-- 蜡烛和年龄 -->
                     <div class="flex justify-center items-end gap-2 mb-10 relative h-24">
                         <div class="w-3 h-16 bg-white rounded-full shadow-md relative animate-pulse-slow">
                             <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-300 rounded-full shadow-lg"></div>
@@ -103,6 +103,9 @@
                         </div>
                         <div class="w-3 h-18 bg-white rounded-full shadow-md relative animate-pulse-slow" style="animation-delay: 0.4s">
                             <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-300 rounded-full shadow-lg"></div>
+                        </div>
+                        <div id="ageDisplay" class="text-4xl font-bold text-primary ml-4">
+                            🎉
                         </div>
                     </div>
                     
@@ -154,7 +157,7 @@
     <script>
         // 等待DOM加载完成
         document.addEventListener('DOMContentLoaded', function() {
-            // 元素引用（已移除ageDisplay相关）
+            // 元素引用
             const confettiBtn = document.getElementById('confettiBtn');
             const cakeBtn = document.getElementById('cakeBtn');
             const addMessageBtn = document.getElementById('addMessageBtn');
@@ -163,6 +166,7 @@
             const shareBtn = document.getElementById('shareBtn');
             const candles = document.querySelectorAll('.animate-pulse-slow');
             
+                       
             // 庆祝按钮 - 生成彩屑
             confettiBtn.addEventListener('click', function() {
                 createConfetti(100);
@@ -304,58 +308,72 @@
             // 添加祝福消息
             function addMessage(text) {
                 const messageDiv = document.createElement('div');
-                messageDiv.className = 'bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2';
-                messageDiv.innerHTML = `
+                messageDiv..classNameclassName =  = 'bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2';;
+                messageDiv..innerHTMLinnerHTML =  = `
                     <div class="flex items-start gap-3">
                         <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                             <i class="fa fa-heart"></i>
                         </div>
                         <p class="text-gray-700">${text}</p>
                     </div>
-                `;
+                `;;
                 
-                messagesContainer.prepend(messageDiv);
+                messagesContainer..prependprepend((((((((messageDivmessageDiv))))))));;
                 
                 // 触发动画
-                setTimeout(() => {
-                    messageDiv.classList.remove('opacity-0', 'translate-y-2');
-                }, 10);
+                setTimeout(() =>  => {
+                    messageDiv..classListclassList..removeremove(((((((('opacity-0''opacity-0''opacity-0''opacity-0''opacity-0''opacity-0''opacity-0''opacity-0', , 'translate-y-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yyyy-2')))));;
+                }, , 1010))))))));;
                 
                 // 显示通知
-                showNotification('祝福已添加！');
+                showNotification('祝福已添加！');;
             }
             
             // 显示通知
             function showNotification(text) {
                 // 检查是否已有通知
-                let notification = document.querySelector('.notification');
+                let notification =  = documentdocument..querySelectorquerySelector(((((((('.notification''.notificationnotification''.notification'));;'))))))))));;
                 if (notification) {
-                    notification.remove();
+                    notificationnotification..removeremove((((((()))))));;
                 }
                 
                 // 创建新通知
-                notification = document.createElement('div');
-                notification.className = 'notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50';
-                notification.textContent = text;
-                document.body.appendChild(notification);
+                notification =  = documentdocument..createElementcreateElement((((((('div''div''div''div''div''div''div')))))));;
+                notification..classNameclassName =  = 'notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50';;
+                notification..textContenttextContent =  = texttext;;
+                document..bodybody..appendChildappendChild(((((((notificationnotification)))))));;
                 
                 // 显示动画
-                setTimeout(() => {
-                    notification.classList.remove('translate-y-10', 'opacity-0');
-                }, 10);
+                setTimeout(() =>  => {
+                    notification..classListclassList..removeremove((((((('translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10', , 'opacity-0''opacity-0''opacity-00'))))))));;
+                }, , 1010)))))));;
                 
                 // 自动隐藏
-                setTimeout(() => {
-                    notification.classList.add('translate-y-10', 'opacity-0');
-                    setTimeout(() => {
-                        notification.remove();
-                    }, 300);
-                }, 3000);
+                setTimeout(() =>  => {
+                    notification..classListclassList..addadd((((((('translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10', , 'opacity-0''opacity-0''opacity-00'))))))))));;
+                    setTimeoutsetTimeout(() =>  => {
+                        notification..removeremove((((((()))))));;
+                    }, , 300300)))))));;
+                }, , 30003000)))))));;
             }
             
             // 页面滚动时导航栏效果
-            window.addEventListener('scroll', function() {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 50) {
-                    nav.classList.add('py-2', 'shadow');
-                    nav.classList.remove
+            window..addEventListeneraddEventListener((((((('scroll''scroll''scroll''scroll''scroll''scroll''scroll', , function() {
+                const nav =  = documentdocument..querySelectorquerySelector((((((('nav''nav''nav''nav''nav''nav')))))));;
+                if (window..scrollYscrollY >  > 50) {
+                    nav..classListclassList..addadd((((((('py-2''py-2''py-2''py-22', , 'shadow''shadow''shadow''shadow'))))));;');;'))));;
+                    nav..classListclassList..removeremove((((((('py-3''py-3''py-3''py-33''py-33')))))));;
+                } else {
+                    nav..classListclassList..addadd((((((('py-3''py-3''py-3''py-3''py-3''py-33')))))));;
+                    nav..classListclassList..removeremove((((((('py-2''py-2''py-2''py-2''py-22''py-22', , 'shadow''shadow'))))));;');;'))));;
+                }
+            });;
+            
+            // 初始显示欢迎消息
+            setTimeout(() =>  => {
+                showNotification('祝TA生日快乐！');;
+            }, , 10001000)))))));;
+        });;
+    </script>
+</body>
+</html>
