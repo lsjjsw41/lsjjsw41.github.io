@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!-- 自定义 -->
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -166,7 +166,8 @@
             const shareBtn = document.getElementById('shareBtn');
             const candles = document.querySelectorAll('.animate-pulse-slow');
             
-                       
+            
+            
             // 庆祝按钮 - 生成彩屑
             confettiBtn.addEventListener('click', function() {
                 createConfetti(100);
@@ -308,73 +309,72 @@
             // 添加祝福消息
             function addMessage(text) {
                 const messageDiv = document.createElement('div');
-                messageDiv..classNameclassName =  = 'bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2''bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2';;
-                messageDiv..innerHTMLinnerHTML =  = `
+                messageDiv.className = 'bg-white p-4 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 opacity-0 translate-y-2';
+                messageDiv.innerHTML = `
                     <div class="flex items-start gap-3">
                         <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                             <i class="fa fa-heart"></i>
                         </div>
                         <p class="text-gray-700">${text}</p>
                     </div>
-                `;;
+                `;
                 
-                messagesContainer..prependprepend((((((((messageDivmessageDiv))))))));;
+                messagesContainer.prepend(messageDiv);
                 
                 // 触发动画
-                setTimeout(() =>  => {
-                    messageDiv..classListclassList..removeremove(((((((('opacity-0''opacity-0''opacity-0''opacity-0''opacity-0''opacity-0''opacity-0''opacity-0', , 'translate-y-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yy-2''translate-yyyy-2')))));;
-                }, , 1010))))))));;
+                setTimeout(() => {
+                    messageDiv.classList.remove('opacity-0', 'translate-y-2');
+                }, 10);
                 
                 // 显示通知
-                showNotification('祝福已添加！');;
+                showNotification('祝福已添加！');
             }
             
             // 显示通知
             function showNotification(text) {
                 // 检查是否已有通知
-                let notification =  = documentdocument..querySelectorquerySelector(((((((('.notification''.notificationnotification''.notification'));;'))))))))));;
+                let notification = document.querySelector('.notification');
                 if (notification) {
-                    notificationnotification..removeremove((((((()))))));;
+                    notification.remove();
                 }
                 
                 // 创建新通知
-                notification =  = documentdocument..createElementcreateElement((((((('div''div''div''div''div''div''div')))))));;
-                notification..classNameclassName =  = 'notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50''notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50';;
-                notification..textContenttextContent =  = texttext;;
-                document..bodybody..appendChildappendChild(((((((notificationnotification)))))));;
+                notification = document.createElement('div');
+                notification.className = 'notification fixed bottom-5 right-5 bg-dark text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-10 opacity-0 z-50';
+                notification.textContent = text;
+                document.body.appendChild(notification);
                 
                 // 显示动画
-                setTimeout(() =>  => {
-                    notification..classListclassList..removeremove((((((('translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10', , 'opacity-0''opacity-0''opacity-00'))))))));;
-                }, , 1010)))))));;
+                setTimeout(() => {
+                    notification.classList.remove('translate-y-10', 'opacity-0');
+                }, 10);
                 
                 // 自动隐藏
-                setTimeout(() =>  => {
-                    notification..classListclassList..addadd((((((('translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10''translate-y-10', , 'opacity-0''opacity-0''opacity-00'))))))))));;
-                    setTimeoutsetTimeout(() =>  => {
-                        notification..removeremove((((((()))))));;
-                    }, , 300300)))))));;
-                }, , 30003000)))))));;
+                setTimeout(() => {
+                    notification.classList.add('translate-y-10', 'opacity-0');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 3000);
             }
             
             // 页面滚动时导航栏效果
-            window..addEventListeneraddEventListener((((((('scroll''scroll''scroll''scroll''scroll''scroll''scroll', , function() {
-                const nav =  = documentdocument..querySelectorquerySelector((((((('nav''nav''nav''nav''nav''nav')))))));;
-                if (window..scrollYscrollY >  > 50) {
-                    nav..classListclassList..addadd((((((('py-2''py-2''py-2''py-22', , 'shadow''shadow''shadow''shadow'))))));;');;'))));;
-                    nav..classListclassList..removeremove((((((('py-3''py-3''py-3''py-33''py-33')))))));;
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('py-2', 'shadow');
+                    nav.classList.remove('py-3');
                 } else {
-                    nav..classListclassList..addadd((((((('py-3''py-3''py-3''py-3''py-3''py-33')))))));;
-                    nav..classListclassList..removeremove((((((('py-2''py-2''py-2''py-2''py-22''py-22', , 'shadow''shadow'))))));;');;'))));;
+                    nav.classList.add('py-3');
+                    nav.classList.remove('py-2', 'shadow');
                 }
-            });;
+            });
             
             // 初始显示欢迎消息
-            setTimeout(() =>  => {
-                showNotification('祝TA生日快乐！');;
-            }, , 10001000)))))));;
-        });;
+            setTimeout(() => {
+                showNotification('祝TA生日快乐！');
+            }, 1000);
+        });
     </script>
 </body>
 </html>
-
